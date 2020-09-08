@@ -20,3 +20,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'ProductController@list')->name('home');
 Route::post('checkout', 'OrderController@checkout')->name('checkout');
 
+Route::any('esewa/success', 'EsewaController@success')->name('esewa.success');
+Route::any('esewa/fail', 'EsewaController@fail')->name('esewa.fail');
+
