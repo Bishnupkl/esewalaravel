@@ -60,4 +60,9 @@ class EsewaController extends Controller
         return false;
 
     }
+
+    public function payment_response()
+    {
+        return view('payment-response');
+    }
 }
