@@ -15,14 +15,15 @@ class OrderController extends Controller
      */
     public function checkout(Request  $request)
     {
-        if (isset($request->pid)) {
-            $product = Product::where('id', $request->pid)->first();
+        if (isset($request->product_id)) {
+            $product = Product::where('id', $request->product_id)->first();
             $order = new Order();
             $order->product_id = $product->id;
             $order->invoice_no = $product->id.time();
             $order->total = $product->amount;
+            $order->status = 0;
             $order->save();
-            return view('checkout', compact('product', $order));
+            return view('checkout', compact('product', 'order'));
         }
     }
 

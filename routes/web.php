@@ -18,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('/', 'ProductController@list')->name('home');
-Route::get('checkout', 'OrderController@checkout')->name('checkout');
+Route::post('checkout', 'OrderController@checkout')->name('checkout');
 
