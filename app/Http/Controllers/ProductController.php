@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function list()
     {
         $products = Product::all();
-        return view('product-list.blde.php', compact('products'));
+        return view('product-list', compact('products'));
     }
 
     /**
